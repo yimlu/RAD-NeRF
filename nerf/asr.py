@@ -89,8 +89,8 @@ class ASR:
 
         # create wav2vec model
         print(f'[INFO] loading ASR model {self.opt.asr_model}...')
-        self.processor = AutoProcessor.from_pretrained(opt.asr_model)
-        self.model = AutoModelForCTC.from_pretrained(opt.asr_model).to(self.device)
+        self.processor = AutoProcessor.from_pretrained('/model/wav2vec')
+        self.model = AutoModelForCTC.from_pretrained('/model/wav2vec').to(self.device)
 
         # prepare to save logits
         if self.opt.asr_save_feats:
